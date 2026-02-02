@@ -30,4 +30,14 @@ db.employees.find(
     {name:0}
 ).skip(1) // skip first 2 documents in the output
 
-db.employees.find().limit(3).skip(1) // first skip 1 document and then limit the output to 2 documents only
+db.employees.find().limit(3).skip(1) 
+// first skip 1 document and then limit the output to 2 documents only
+
+//db.employees.find({},{}).sort({}) //
+db.employees.find().sort({salary:1}) // sort in ascending order based on salary
+
+db.employees.find().sort({salary:-1}) // sort in descending order based on salary
+
+db.employees.find().limit(3).skip(1).sort({salary:-1}) 
+// first skip 1 document and then limit the output to 2 documents only and sort in descending order based on salary
+
