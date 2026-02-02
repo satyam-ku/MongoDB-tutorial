@@ -1,0 +1,16 @@
+#Language - java , dotnet, mern(js), python.
+it is non-releational database, nor-tabular database.
+we can intract by use of mongodb shell.
+#Advantage
+Flexiblity- mongodb is schema less, means don't need to design schema for the database.
+Sclablity- mongodb can be horizontaly scaled by distunguish data across multiple servers, a process called sharding.
+sharding ---- ?
+Performance- 
+
+cmd after installation--
+mongosh (means mongo shell for connect database) note - if we provide address along with ip address of cloud server it will connect with online server.
+show dbs in mongo || show database in sql -> for show existing database
+use lpu26a
+show collections 
+db.users.inserOne({name:"avi",age:20}) // curly bracet means object // its create and insert in database
+db.users.find() // show details of collections.
