@@ -44,3 +44,19 @@ db.employees.insertMany(
         }
     ]
 );
+
+db.prodcts_details.insertMany(
+    [
+    {
+        name: "laptop",
+        brand: "dell",
+        price: 50000
+    },
+    {
+        name: "phone",
+        brand: "samsung",
+        price: 30000
+    }
+]
+
+);

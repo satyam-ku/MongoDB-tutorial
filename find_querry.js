@@ -41,3 +41,4 @@ db.employees.find().sort({salary:-1}) // sort in descending order based on salar
 db.employees.find().limit(3).skip(1).sort({salary:-1}) 
 // first skip 1 document and then limit the output to 2 documents only and sort in descending order based on salary
 
+db.employees.find().count() // to count total number of documents present in the collection
