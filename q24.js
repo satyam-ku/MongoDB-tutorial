@@ -31,6 +31,11 @@ mongosh "mongodb://127.0.0.1:27018,127.0.0.1:27019,127.0.0.1:27020/?replicaSet=r
 
 
 // use mydatabase
+for(let i=1;i<=100;i++){
+    db.users.insertOne({name: "User"+i, age: 21})
+}
+
+//for count documents -> db.users.countDocument()
 db.users.insertOne({name: "John", age: 30})//insert a document into the collection
 
 db.getMongo().setReadPref("secondary")//set the read preference to secondary
