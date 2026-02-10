@@ -70,4 +70,32 @@ sh.status()
 
 //now create database on 27050
 use icici
+//now enable sharding
+sh.enableSharding("icici")
+sh.shardCollection("icici.coustomers",{_id:1})
+sh.getShardedDataDistribution()
+sh.status()
+show cllections
+//now add some document in collection
+db.customers.insertOne({
+        _id:1,
+        name: "Customer 1"
+})
 
+db.customers.find()
+
+//update the chunksize means storage of data
+//run it on config shell to change the setting of chunksize
+db.settings.updateOne(
+        {_id:"chunksize"},
+        {$set: {value:1}},
+        {upset: true}
+)
+//now insert multiple data
+for(let i=2;i<=10000;i++){
+        db.customers.insertOne({
+                _id:i,
+                name: "customer "+i
+        })
+}
+//now chech shared data distribution
